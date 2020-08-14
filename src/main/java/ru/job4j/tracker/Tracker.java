@@ -50,13 +50,18 @@ public class Tracker {
         }
         return rsl;
     }
-    public void delete(int id) {
+    public boolean delete(int id) {
+        boolean rsl = false;
         int index = indexOf(id);
-        int start = index + 1;
-        int distPos = index;
-        int length = size - index;
-        System.arraycopy(items, start, items, distPos, length);
-        items[size - 1] = null;
-        size--;
+        if (index != -1) {
+            int start = index + 1;
+            int distPos = index;
+            int length = size - index;
+            System.arraycopy(items, start, items, distPos, length);
+            items[size - 1] = null;
+            size--;
+            return true;
+        }
+        return rsl;
     }
 }
