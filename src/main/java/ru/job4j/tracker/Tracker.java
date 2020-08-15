@@ -8,7 +8,6 @@ public class Tracker {
     private int ids = 1;
     private int size = 0;
 
-
     public Item add(Item item) {
         item.setId(ids++);
         items[size++] = item;
@@ -47,6 +46,7 @@ public class Tracker {
        boolean rsl = index != -1;
        if (rsl) {
            items[index] = item;
+           item.setId(id);
        }
         return rsl;
     }
