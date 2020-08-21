@@ -33,28 +33,36 @@ import java.util.Scanner;
                     else if (select == 2) {
                         System.out.println("== Edit item ==");
                         System.out.println("Enter name: ");
+                        String name = scanner.nextLine();
+                        Item newItem = new Item(name);
+                        System.out.println("Enter id: ");
+                        int id = scanner.nextInt();
+                        if (tracker.replace(id, newItem)) {
+                            System.out.println("Operation completed successfully");
+                        } else {
+                            System.out.println("An error has occurred. Try again");
+                        }
                     }
 
                     else if (select == 3) {
                         System.out.println("== Delete item ==");
+                        System.out.println("Enter id: ");
+                        String id = scanner.nextLine();
+                        if (tracker.delete(id)) {
+                            System.out.println("Operation completed successfully");
+                        } else {
+                            System.out.println("An error has occurred. Try again");
+                        }
                     }
 
                     else if (select == 4) {
                         System.out.println("== Find item by id ==");
+                        System.out.println("Enter id: ");
                     }
 
                     else if (select == 5) {
                         System.out.println("== Find items by name ==");
-                        System.out.println("Enter name: ");
-                        String name = scanner.nextLine();
-                        Item[] n = tracker.findByName(name);
-                        if (n.length == 0) {
-                            System.out.println("Error, we can't find result!");
-                        } else {
-                            for (int i = 0; i < n.length; i++) {
-                                System.out.println();
-                            }
-                        }
+                        System.out.println("Enter key: ");
                     }
 
                     else if (select == 6) {
@@ -64,8 +72,14 @@ import java.util.Scanner;
                 }
             }
             private void showMenu() {
-                System.out.println();
-                /*добавить нужные пункты*/
+                System.out.println("Menu.");
+                System.out.println("0. Add new Item.");
+                System.out.println("1. Show all items.");
+                System.out.println("2. Edit item.");
+                System.out.println("3. Delete item.");
+                System.out.println("4. Find item by Id.");
+                System.out.println("5. Find items by name.");
+                System.out.println("6. Exit Program.");
             }
 
             public static void main(String[] args) {

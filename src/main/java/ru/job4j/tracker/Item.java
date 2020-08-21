@@ -26,6 +26,11 @@ public class Item {
     public void setId(int id) {
         this.id = id;
     }
-
-
+    @Override
+    public String toString() {
+        return " Item {" +
+                " id = " + id +
+                ", name = " + name +
+                 " }";
+    }
 }
