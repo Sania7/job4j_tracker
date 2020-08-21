@@ -9,7 +9,7 @@ import java.util.Scanner;
                 while (run) {
                     this.showMenu();
                     System.out.println("Select: ");
-                    int select = Integer.valueOf(scanner.nextLine());
+                    int select = Integer.parseInt(scanner.nextLine());
                     if (select == 0) {
                         System.out.println("=== Create a new Item ====");
                         System.out.print("Enter name: ");
@@ -47,7 +47,7 @@ import java.util.Scanner;
                     else if (select == 3) {
                         System.out.println("== Delete item ==");
                         System.out.println("Enter id: ");
-                        String id = scanner.nextLine();
+                        int id = scanner.nextInt();
                         if (tracker.delete(id)) {
                             System.out.println("Operation completed successfully");
                         } else {
@@ -58,11 +58,22 @@ import java.util.Scanner;
                     else if (select == 4) {
                         System.out.println("== Find item by id ==");
                         System.out.println("Enter id: ");
+                        int id = scanner.nextInt();
+                        Item item = tracker.findById(id);
+                        if (item != null) {
+                            System.out.println(item.getName() + ", " + item.getId());
+                        } else {
+                            System.out.println("An error has occurred. Try again");
+                        }
                     }
 
                     else if (select == 5) {
                         System.out.println("== Find items by name ==");
                         System.out.println("Enter key: ");
+                        String name = scanner.nextLine();
+                        for (Item item : tracker.findByName(name)) {
+                            System.out.println("Name " + item.getName() + " id" + item.getId());
+                        }
                     }
 
                     else if (select == 6) {
