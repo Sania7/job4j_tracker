@@ -9,7 +9,7 @@ import java.util.Scanner;
                 while (run) {
                     this.showMenu();
                     System.out.println("Select: ");
-                    int select = Integer.parseInt(scanner.nextLine());
+                    int select = Integer.valueOf(scanner.nextLine());
                     if (select == 0) {
                         System.out.println("=== Create a new Item ====");
                         System.out.print("Enter name: ");
@@ -32,11 +32,11 @@ import java.util.Scanner;
 
                     else if (select == 2) {
                         System.out.println("== Edit item ==");
+                        System.out.println("Enter id: ");
+                        int id = Integer.parseInt(scanner.nextLine());
                         System.out.println("Enter name: ");
                         String name = scanner.nextLine();
                         Item newItem = new Item(name);
-                        System.out.println("Enter id: ");
-                        int id = scanner.nextInt();
                         if (tracker.replace(id, newItem)) {
                             System.out.println("Operation completed successfully");
                         } else {
@@ -47,7 +47,7 @@ import java.util.Scanner;
                     else if (select == 3) {
                         System.out.println("== Delete item ==");
                         System.out.println("Enter id: ");
-                        int id = scanner.nextInt();
+                        int id = Integer.parseInt(scanner.nextLine());
                         if (tracker.delete(id)) {
                             System.out.println("Operation completed successfully");
                         } else {
@@ -58,7 +58,7 @@ import java.util.Scanner;
                     else if (select == 4) {
                         System.out.println("== Find item by id ==");
                         System.out.println("Enter id: ");
-                        int id = scanner.nextInt();
+                        int id = Integer.parseInt(scanner.nextLine());
                         Item item = tracker.findById(id);
                         if (item != null) {
                             System.out.println(item.getName() + ", " + item.getId());
