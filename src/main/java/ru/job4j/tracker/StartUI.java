@@ -4,20 +4,23 @@ import java.util.Arrays;
 
 
         public class StartUI {
+            public static void createItem(Input input, Tracker tracker) {
+                System.out.println("=== Create a new Item ===");
+                String name = input.askStr("Enter name: ");
+                Item item = new Item(name);
+                tracker.add(item);
+            }
             public void init(Input input, Tracker tracker) {
                 boolean run = true;
                 while (run) {
                     this.showMenu();
                     int select = Integer.valueOf(input.askStr("Select: "));
                     if (select == 0) {
-                        System.out.println("=== Create a new Item ====");
-                        String name = input.askStr("Enter name: ");
-                        Item item = new Item(name);
-                        tracker.add(item);
+                        StartUI.createItem(input, tracker);
                     }
                     else if (select == 1) {
+                        StartUI.createItem(input, tracker);
                         System.out.println("== Show all items ==");
-                        System.out.println("Enter name: ");
                         Item[] n = tracker.findAll();
                         if (n.length == 0) {
                             System.out.println("Error, we can't find result!");
@@ -29,6 +32,7 @@ import java.util.Arrays;
                     }
 
                     else if (select == 2) {
+                        StartUI.createItem(input, tracker);
                         System.out.println("== Edit item ==");
                         int id = input.askInt("Enter id: ");
                         String name = input.askStr("Enter name: ");
@@ -41,6 +45,7 @@ import java.util.Arrays;
                     }
 
                     else if (select == 3) {
+                        StartUI.createItem(input, tracker);
                         System.out.println("== Delete item ==");
                         int id = input.askInt("Enter id: ");
                         if (tracker.delete(id)) {
@@ -51,6 +56,7 @@ import java.util.Arrays;
                     }
 
                     else if (select == 4) {
+                        StartUI.createItem(input, tracker);
                         System.out.println("== Find item by id ==");
                         int id = input.askInt("Enter id: ");
                         Item item = tracker.findById(id);
@@ -62,6 +68,7 @@ import java.util.Arrays;
                     }
 
                     else if (select == 5) {
+                        StartUI.createItem(input, tracker);
                         System.out.println("== Find items by name ==");
                         String name = input.askStr("Enter name: ");
                         for (Item item : tracker.findByName(name)) {
