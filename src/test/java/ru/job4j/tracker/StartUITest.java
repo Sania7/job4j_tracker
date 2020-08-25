@@ -33,6 +33,6 @@ public class StartUITest {
         String[] answers = {String.valueOf(item.getId()), "deleted item"};
         StartUI.deleteItem(new StubInput(answers), tracker);
         Item deleted = tracker.findById(item.getId());
-        assertThat(deleted.getName(), is("deleted item"));
+        assertNull(deleted);
     }
 }
