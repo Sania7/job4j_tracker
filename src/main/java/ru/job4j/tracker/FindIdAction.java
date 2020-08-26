@@ -5,7 +5,6 @@ public class FindIdAction implements UserAction{
     public String name() {
         return "=== Find item by id ===";
     }
-
     @Override
     public boolean execute(Input input, Tracker tracker) {
         int id = input.askInt("Enter id: ");

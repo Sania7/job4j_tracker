@@ -5,7 +5,6 @@ public class DeleteAction implements UserAction {
     public String name() {
         return "=== Delete item ===";
     }
-
     @Override
     public boolean execute(Input input, Tracker tracker) {
         int id = input.askInt("Enter id: ");

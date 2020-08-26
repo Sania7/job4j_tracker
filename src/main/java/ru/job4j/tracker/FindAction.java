@@ -5,7 +5,6 @@ public class FindAction implements UserAction{
     public String name() {
         return "=== Show all items ===";
     }
-
     @Override
     public boolean execute(Input input, Tracker tracker) {
         Item[] n = tracker.findAll();
