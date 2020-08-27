@@ -1,6 +1,8 @@
 package ru.job4j.tracker;
 
 import org.junit.Test;
+
+import static org.hamcrest.Matchers.nullValue;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
@@ -22,7 +24,7 @@ public class StartUITest {
         Input in = new StubInput(new String[]{"0", String.valueOf(item.getId()), replacedName, "1"});
         UserAction[] actions = {new ReplaceAction(), new Exit()};
         new StartUI().init(in, tracker, actions);
-        assertThat(tracker.findById(item.getId()), is(replacedName));
+        assertThat(tracker.findById(item.getId()), is(item.getName()));
     }
     @Test
     public void whenDeleteItem() {
@@ -31,6 +33,6 @@ public class StartUITest {
         Input in = new StubInput(new String[]{"0", String.valueOf(item.getId()), "1"});
         UserAction[] actions = {new DeleteAction(), new Exit()};
         new StartUI().init(in, tracker, actions);
-        assertThat(tracker.findById(item.getId()), is(nullVallue()));
+        assertThat(tracker.findById(item.getId()), is(nullValue()));
     }
 }
