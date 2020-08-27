@@ -1,18 +1,23 @@
 package ru.job4j.tracker;
 
 public class FindIdAction implements UserAction{
+    private final Output out;
+    public FindIdAction(Output out) {
+        this.out = out;
+    }
     @Override
     public String name() {
-        return "=== Find item by id ===";
+        return "Find";
     }
     @Override
     public boolean execute(Input input, Tracker tracker) {
+        out.println("=== Find item by id ===");
         int id = input.askInt("Enter id: ");
         Item item = tracker.findById(id);
         if (item != null) {
-            System.out.println(item.getName() + ", " + item.getId());
+            out.println(item.getName() + ", " + item.getId());
         } else {
-            System.out.println("An error has occurred. Try again");
+            out.println("An error has occurred. Try again");
         }
         return true;
     }
