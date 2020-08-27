@@ -33,7 +33,7 @@ public class StartUI {
                         new FindIdAction(),
                         new FindNameAction(),
                         new ReplaceAction(),
-                        new ExitAction()
+                        new Exit()
                 };
                 new StartUI().init(input, tracker,actions);
             }
