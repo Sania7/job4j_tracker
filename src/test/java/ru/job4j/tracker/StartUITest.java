@@ -24,7 +24,7 @@ public class StartUITest {
         Input in = new StubInput(new String[]{"0", String.valueOf(item.getId()), replacedName, "1"});
         UserAction[] actions = {new ReplaceAction(), new Exit()};
         new StartUI().init(in, tracker, actions);
-        assertThat(tracker.findById(item.getId()), is(item.getName()));
+        assertThat(tracker.findById(item.getId()).getName(), is(replacedName));
     }
     @Test
     public void whenDeleteItem() {
