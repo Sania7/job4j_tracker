@@ -1,6 +1,5 @@
 package ru.job4j.tracker.singleton;
 
-import ru.job4j.tracker.Item;
 import ru.job4j.tracker.Tracker;
 
 public class TrackerSingleThree {
@@ -15,9 +14,7 @@ public class TrackerSingleThree {
     public static TrackerSingleThree getInstance() {
         return INSTANCE;
     }
-    public Item add(Item model) {
-        return model;
-    }
+
 
     public static void main(String[] args) {
         TrackerSingleThree tracker = TrackerSingleThree.getInstance();
