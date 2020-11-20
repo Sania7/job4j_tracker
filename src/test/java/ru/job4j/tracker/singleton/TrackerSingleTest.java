@@ -1,7 +1,7 @@
 package ru.job4j.tracker.singleton;
 
 import org.junit.Test;
-import ru.job4j.tracker.Item;
+
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 

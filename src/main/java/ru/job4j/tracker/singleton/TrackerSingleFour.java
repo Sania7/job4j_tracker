@@ -4,7 +4,7 @@ package ru.job4j.tracker.singleton;
 import ru.job4j.tracker.Tracker;
 
     public class TrackerSingleFour {
-        private Tracker tracker;
+        private final Tracker tracker;
         private TrackerSingleFour() {
             tracker = new Tracker();
         }
