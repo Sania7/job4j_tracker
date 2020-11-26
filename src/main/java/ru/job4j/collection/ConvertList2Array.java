@@ -5,19 +5,28 @@ import java.util.List;
 //3. Конвертация ArrayList в двухмерный массив [#320186]
 
 public class ConvertList2Array {
-    public static int[][] toArray(List<Integer> list, int rows) {
-        int size = list.size();
-        int cells = size % rows == 0 ? size / rows : size / rows + 1;
-        int[][] array = new int[rows][cells];
-        int count = 0;
-        for (int row = 0; row < rows; row++) {
-            for (int cell = 0; cell < cells; cell++) {
-                if (count == list.size()) {
-                    break;
-                }
-                array[row][cell] = list.get(count++);
+    public static int[][] toArray(List<Integer> list, int cells) {
+        int groups = (int) Math.ceil((double) list.size() / cells);
+        int[][] array = new int[groups][cells];
+        int row = 0, cell = 0;
+        for (Integer num : list) {
+            array[row][cell] = num;
+            cell++;
+            if (cell == cells) {
+                row++;
+                cell = 0;
             }
         }
         return array;
+    }
+    public static void main(String[] args) {
+        List<Integer> list = List.of(1, 2, 3, 4, 5, 6, 7);
+        int[][] rsl = toArray(list, 3);
+        for (int[] row : rsl) {
+            for (int cell : row) {
+                System.out.print(cell + " ");
+            }
+            System.out.println();
+        }
     }
 }
