@@ -5,6 +5,7 @@ import java.util.List;
 
 //4. Конвертация двумерного массива в ArrayList
 
+
 public class ConvertMatrix2List {
     public List<Integer> toList(int[][] array) {
         List<Integer> list = new ArrayList<>();
