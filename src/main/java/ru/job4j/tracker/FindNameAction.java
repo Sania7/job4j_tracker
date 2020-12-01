@@ -21,7 +21,7 @@ public class FindNameAction implements UserAction {
         List<Item> items = tracker.findByName(name);
         if (!items.isEmpty()) {
             for (Item item : items) {
-                out.println(item);
+                out.println(item.getName());
             }
         } else {
             out.println("No tickets with this name were found!");

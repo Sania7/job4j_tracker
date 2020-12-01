@@ -87,9 +87,11 @@ public class StartUITest {
         String menu = "Menu." + ls + "0. Find" + ls + "1. Exit" + ls;
         assertThat(out.toString(), is(item.getName() + menu +
                 "=== Find items by name ===" +
-                ls + "Name " + item.getName() + " id" + item.getId() + ls
+                ls + "Name" + item.getName() + " id" + item.getId() + ls
                    + menu + "=== Exit ===" + ls));
     }
+
+
     @Test
     public void whenDeleteItem() {
         Output out = new StubOutput();
