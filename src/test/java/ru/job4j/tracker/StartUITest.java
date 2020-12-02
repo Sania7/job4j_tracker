@@ -87,7 +87,7 @@ public class StartUITest {
         String menu = "Menu." + ls + "0. Find" + ls + "1. Exit" + ls;
         assertThat(out.toString(), is(item.getName() + menu +
                 "=== Find items by name ===" +
-                ls + "Name" + item.getName() + " id" + item.getId() + ls
+                ls  + item  + ls
                    + menu + "=== Exit ===" + ls));
     }
 
