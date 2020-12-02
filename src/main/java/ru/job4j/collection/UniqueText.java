@@ -1,7 +1,5 @@
 package ru.job4j.collection;
 
-import java.util.Collection;
-import java.util.Collections;
 import java.util.HashSet;
 
 public class UniqueText {
@@ -12,13 +10,13 @@ public class UniqueText {
         HashSet<String> check = new HashSet<>();
         for (String words : origin) {
             check.add(words);
+        }
             for (String str : text) {
                 rsl = check.contains(str);
                 if (!rsl) {
                     break;
                 }
             }
-        }
         return rsl;
     }
 }
