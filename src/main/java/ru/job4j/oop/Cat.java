@@ -9,9 +9,11 @@ public class Cat {
         System.out.println(this.food);
         System.out.println(this.name);
     }
+
     public void eat(String meat) {
         this.food = meat;
     }
+
     public void giveNick(String nick) {
         this.name = nick;
     }

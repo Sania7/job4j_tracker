@@ -5,9 +5,11 @@ import ru.job4j.tracker.Tracker;
 public class TrackerSingleTwo {
     private static TrackerSingleTwo instance;
     private Tracker tracker;
+
     private TrackerSingleTwo() {
         tracker = new Tracker();
     }
+
     public static TrackerSingleTwo getInstance() {
         if (instance == null) {
             instance = new TrackerSingleTwo();

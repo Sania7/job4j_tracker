@@ -2,15 +2,18 @@ package ru.job4j.tracker;
 
 import java.util.List;
 
-public class FindAction implements UserAction{
+public class FindAction implements UserAction {
     private final Output out;
+
     public FindAction(Output out) {
         this.out = out;
     }
+
     @Override
     public String name() {
         return "Show";
     }
+
     @Override
     public boolean execute(Input input, Tracker tracker) {
         out.println("Show all items");

@@ -5,9 +5,11 @@ import ru.job4j.tracker.Tracker;
 
     public class TrackerSingleFour {
         private final Tracker tracker;
+
         private TrackerSingleFour() {
             tracker = new Tracker();
         }
+
         public static TrackerSingleFour getInstance() {
             return Holder.INSTANCE;
         }
@@ -15,6 +17,7 @@ import ru.job4j.tracker.Tracker;
         public Tracker getTracker() {
             return tracker;
         }
+
         private static final class Holder {
             private static final TrackerSingleFour INSTANCE = new TrackerSingleFour();
         }

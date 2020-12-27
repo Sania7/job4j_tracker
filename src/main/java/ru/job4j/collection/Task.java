@@ -8,6 +8,7 @@ public class Task {
         this.number = number;
         this.description = description;
     }
+
     public String getNumber() {
         return number;
     }

@@ -21,6 +21,7 @@ public class PriorityQueue {
         }
         this.tasks.add(index, task);
     }
+
     public Task take() {
         return tasks.poll();
     }

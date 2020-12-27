@@ -10,7 +10,7 @@ public class TrackerSingleTest {
     public void trackerSingleOne() {
         TrackerSingleOne trackerSingleOne = TrackerSingleOne.INSTANCE;
         TrackerSingleOne trackerSingleOne1 = TrackerSingleOne.INSTANCE;
-        assertThat(trackerSingleOne,is(trackerSingleOne1));
+        assertThat(trackerSingleOne, is(trackerSingleOne1));
     }
 
     @Test

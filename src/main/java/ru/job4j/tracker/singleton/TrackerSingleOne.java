@@ -6,7 +6,6 @@ public enum TrackerSingleOne {
     INSTANCE;
     private final Tracker tracker = new Tracker();
 
-
     public Tracker getTracker() {
         return tracker;
     }

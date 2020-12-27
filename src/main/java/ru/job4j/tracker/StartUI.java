@@ -7,9 +7,11 @@ import java.util.List;
 public class StartUI {
 
     private final Output out;
+
     public StartUI(Output out) {
         this.out = out;
     }
+
             public void init(Input input, Tracker tracker, List<UserAction> actions) {
                 boolean run = true;
                 while (run) {
@@ -23,12 +25,14 @@ public class StartUI {
                     run = action.execute(input, tracker);
                 }
             }
+
             private void showMenu(List<UserAction> actions) {
                 out.println("Menu.");
                 for (int index = 0; index < actions.size(); index++) {
                     out.println(index + ". " + actions.get(index).name());
                 }
             }
+
             public static void main(String[] args) {
                 Output output = new ConsoleOutput();
                 Input input = new ValidateInput(output, new ConsoleInput());
@@ -42,6 +46,6 @@ public class StartUI {
                  actions.add(new ReplaceAction(output));
                  actions.add(new Exit(output));
 
-                new StartUI(output).init(input, tracker,actions);
+                new StartUI(output).init(input, tracker, actions);
             }
 }

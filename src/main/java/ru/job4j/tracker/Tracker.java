@@ -12,8 +12,6 @@ public class Tracker {
      */
     private int ids = 1;
 
-
-
     /* добавляет заявку, переданную в аргументах в массив заявок items.*/
     public Item add(Item item) {
         item.setId(ids++);
@@ -21,13 +19,15 @@ public class Tracker {
         return item;
     }
 
-    /* метод проверяет в цикле все элементы все элементы массива items, сравнивая id с аргументом int id */
+    /* метод проверяет в цикле все элементы все элементы массива items,
+     сравнивая id с аргументом int id */
     public Item findById(int id) {
         int index = indexOf(id);
         return index != -1 ? items.get(index) : null;
     }
 
-    /* проверяет в цикле все элементы  items, сравнивая name(используя метод getName класса Item) c аргументом метода String key */
+    /* проверяет в цикле все элементы  items, сравнивая name(используя метод getName класса Item)
+     c аргументом метода String key */
     public List<Item> findByName(String key) {
         List<Item> rsl = new ArrayList<>();
         for (Item item : items) {
@@ -38,14 +38,15 @@ public class Tracker {
         return rsl;
     }
 
-    /* метод public Item[] findAll() возвращает копию массива items без null элементов (без пустых ячеек). */
+    /* метод public Item[] findAll() возвращает копию массива
+    items без null элементов (без пустых ячеек). */
     public List<Item> findAll() {
+        List<Item> items = this.items;
         return items;
     }
 
-
     private int indexOf(int id) {
-        int rsl = - 1;
+        int rsl = -1;
         for (int index = 0; index < items.size(); index++) {
             if (items.get(index).getId() == id) {
                 rsl = index;

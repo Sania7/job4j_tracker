@@ -8,7 +8,8 @@ import java.util.Map;
 public class BankService {
     private Map<User, List<Account>> users = new HashMap<>(); // все пользователи со счетами
 
-    // добавляем пользователя в систему Map.put, с начала пустой new ArrayList<Account>(); проверить наличие пользователя
+    // добавляем пользователя в систему Map.put, с начала пустой new ArrayList<Account>();
+    // проверить наличие пользователя
     public void addUser(User user) {
         users.putIfAbsent(user, new ArrayList<>());
     }
@@ -23,6 +24,7 @@ public class BankService {
                 }
         }
     }
+
     public User findByPassport(String passport) {
         User user = null;
         for (User key : users.keySet()) {
@@ -50,6 +52,7 @@ public class BankService {
         }
         return rslAccount;
     }
+
     public boolean transferMoney(String srcPassport, String srcRequisite,
                                  String destPassport, String destRequisite, double amount) {
         boolean rsl = false;
