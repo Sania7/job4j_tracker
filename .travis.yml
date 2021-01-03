@@ -14,6 +14,7 @@ after_success:
   # - CODECOV_TOKEN="d5ba33c1-60f4-4d78-96f4-2bf42a938cd6"
 # Отправлять уведомление на почтуyouremail@smtp.ru(Изменить на свою) если сборка упала
 notifications:
+
   email:
     recipients:
       -79824177721@yandex.ru
