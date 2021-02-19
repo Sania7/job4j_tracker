@@ -16,7 +16,6 @@ public class User {
      * @param passport принимает на вход паспорт клиента
      * @param username принимает на вход имя клиента
      */
-
     public User(String passport, String username) {
         this.passport = passport;
         this.username = username;
