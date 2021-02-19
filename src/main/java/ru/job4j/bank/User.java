@@ -46,6 +46,8 @@ public class User {
         this.username = username;
     }
 
+
+
     /**
      * Метод проверяющий уникальность клиента по паспорту
      * @param o принимаемый на вход объект
@@ -62,7 +64,6 @@ public class User {
         User user = (User) o;
         return Objects.equals(passport, user.passport);
     }
-
     /**
      * @return возвращает уникальный hash-код клиента
      */
