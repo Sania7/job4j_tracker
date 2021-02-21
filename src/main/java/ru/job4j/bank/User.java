@@ -4,6 +4,7 @@ import java.util.Objects;
 
 /**
  * Класс описывает клиента банка
+ * @author ALEXANDR
  */
 public class User {
     private String passport;
