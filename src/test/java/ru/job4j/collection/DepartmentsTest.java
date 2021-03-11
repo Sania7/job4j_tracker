@@ -15,6 +15,7 @@ import static org.junit.Assert.*;
     List<String> result = Departments.fillGaps(input);
     assertThat(result, is(expect));
  }
+
     @Test
     public void whenNonChange() {
         List<String> input = Arrays.asList("k1", "k1/sk1");
