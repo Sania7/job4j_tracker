@@ -8,8 +8,11 @@ public class UsageArrayList {
         names.add("Petr");
         names.add("Ivan");
         names.add("Stepan");
+        names.add("Vasia");
+        names.set(3, "Klava");
+        names.remove(0);
         for (String item : names) {
-            System.out.print(item + " ");
+            System.out.println(item + " ");
         }
     }
 }
