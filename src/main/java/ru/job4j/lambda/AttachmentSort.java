@@ -27,8 +27,6 @@ public class AttachmentSort {
         };
         attachments.sort(comparator);
         System.out.println(attachments);
-
-
         Comparator comparator1 = new Comparator<Attachment>() {
 
             @Override
