@@ -28,13 +28,18 @@ public class AttachmentSort {
         attachments.sort(comparator);
         System.out.println(attachments);
 
+
         Comparator comparator1 = new Comparator<Attachment>() {
+
             @Override
+
             public int compare(Attachment attachment1, Attachment attachment2) {
+
                 return attachment1.getName().compareTo(attachment2.getName());
             }
         };
         attachments.sort(comparator1);
         System.out.println(attachments);
+
     }
 }
