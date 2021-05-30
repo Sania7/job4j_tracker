@@ -1,9 +1,11 @@
 package ru.job4j.tracker;
 
 
+
 import java.util.Scanner;
 
 // консольное приложение для работы с классом ru,job4j.tracker.Tracker.
+//2.3. Реализация класса StartUI. Добавление заявки [#500744]
 public class StartUI {
 
     // Метод init() - инициализирует приложение и запускает выполнение
@@ -14,9 +16,15 @@ public class StartUI {
                     showMenu();
                     System.out.println("Select: ");
                     int select = Integer.parseInt(scanner.nextLine());
-                    if (select != 6) {
+                    if (select == 0) {
                         System.out.println("User selected: " + select);
-                    } else {
+                        System.out.println("=== Create a new Item ===");
+                        System.out.print("Enter name: ");
+                        String name = scanner.nextLine();
+                        Item item = new Item(name);
+                        tracker.add(item);
+                        System.out.println("Added application: " + item);
+                    } else if (select == 6) {
                         System.out.println("User selected: " + select + ".");
                         System.out.println("The program is closed!");
                         run = false;
