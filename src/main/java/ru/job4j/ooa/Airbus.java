@@ -16,7 +16,6 @@ public class Airbus  {
         this.name = name;
     }
 
-
     public void printModel() {
         System.out.println("Модель самолета: " + name);
     }
