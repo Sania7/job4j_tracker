@@ -4,8 +4,6 @@ package ru.job4j.tracker;
 import java.util.ArrayList;
 import java.util.List;
 
-// консольное приложение для работы с классом ru,job4j.tracker.Tracker.
-//2.3. Реализация класса StartUI. Добавление заявки [#500744]
 public class StartUI {
     private final Output out;
 
