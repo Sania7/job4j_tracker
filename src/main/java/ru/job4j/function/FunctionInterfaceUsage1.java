@@ -23,8 +23,9 @@ public class FunctionInterfaceUsage1 {
         List<String> list = List.of("one", "two", "three", "one", "two", "three");
         Supplier<Set<String>> sub = () -> new HashSet<>(list);
         Set<String> strings = sub.get();
+        int i = 1;
         for (String s : strings) {
-            System.out.println(s);
+            System.out.print(i++  + "." + s + " ");
         }
 
         }
