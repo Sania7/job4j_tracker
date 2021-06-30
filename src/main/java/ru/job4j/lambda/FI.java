@@ -23,9 +23,14 @@ public class FI {
         Arrays.sort(atts, comparator);
 
         // компоратор для строк через лямбда, через метод compareTo.
-        Comparator<String> cmpSize = (left, right) -> left.compareTo(right);
+        Comparator<Attachment> cmpSize = (left, right) -> left.getName().compareTo(right.getName());
+        Arrays.sort(atts, cmpSize);
+        System.out.println(Arrays.asList(atts));
 
         //компаратор для строки по убыванию
-        Comparator<String> cmpDescSize = (left, right) -> left.length() - right.length();
+        Comparator<Attachment> cmpDescSize = (left, right) ->
+                Integer.compare(right.getSize(), left.getSize());
+        Arrays.sort(atts, cmpDescSize);
+        System.out.println(Arrays.asList(atts));
     }
 }
