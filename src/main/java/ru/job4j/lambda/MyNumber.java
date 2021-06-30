@@ -1,15 +1,25 @@
 package ru.job4j.lambda;
 
 public interface MyNumber {
-    double getValue();
+    int getValue();
 }
 
+/**
+ * Продемонстрировать применение простого лямбда выражения
+ */
 class LambdaDemo {
     public static void main(String[] args) {
-        MyNumber myNum = () -> 123.45;
+        MyNumber myNum; // объявить ссылку на функциональный интерфейс
+        /**
+         * Здесь лямбда выражение просто является константным выражением.
+         * Когда оно присваивается ссылочной переменной myNum получается
+         * экземпляр класса в котором лямда выражение реализует метод getValue.
+         * Лямбда выражение должно быть совместимо по типу данных с абстрактным методом.
+         */
+        myNum = () -> 123;
         System.out.println("Фиксированное значение: " + myNum.getValue());
         //более сложное выражение
-        myNum = () -> Math.random() * 100;
+        myNum = () -> (int) (Math.random() * 100);
         System.out.println("Случайное значение: " + myNum.getValue());
         System.out.println("Еще одно случайное выражение: " + myNum.getValue());
 
