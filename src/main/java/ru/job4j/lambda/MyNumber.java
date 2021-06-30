@@ -1,5 +1,7 @@
 package ru.job4j.lambda;
 
+import java.util.Comparator;
+
 public interface MyNumber {
     int getValue();
 }

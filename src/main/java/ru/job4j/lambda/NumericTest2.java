@@ -1,5 +1,7 @@
 package ru.job4j.lambda;
 
+import java.util.Comparator;
+
 public interface NumericTest2 {
     boolean test(int n, int d);
 }
