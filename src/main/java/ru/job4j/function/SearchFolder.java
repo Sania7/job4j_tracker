@@ -9,8 +9,8 @@ public class SearchFolder {
      * Фильтры созданы с использованием встроенного функционального интерфейса Predicate
      * для фильтрации объектов по соответствию параметра size заданному условию.
      */
-    Predicate<Folder> filterBySize = (i) -> i.getSize() > 100;
-    Predicate<Folder> filterByName = (s) -> s.getName().contains("bug");
+    private Predicate<Folder> filterBySize = (i) -> i.getSize() > 100;
+    private Predicate<Folder> filterByName = (s) -> s.getName().contains("bug");
 
     /**
      *
