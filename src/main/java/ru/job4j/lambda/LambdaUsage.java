@@ -7,9 +7,9 @@ public class LambdaUsage {
 
     public static void main(String[] args) {
         String[] atts = {
-                new String("image 1"),
-                new String("image 3"),
-                new String("image 2"),
+                ("image 1"),
+                ("image 3"),
+                ("image 2"),
         };
 
         Comparator<String> cmpDescSize = (left, right) -> {
