@@ -6,15 +6,15 @@ import java.util.Comparator;
 public class LambdaUsage {
 
     public static void main(String[] args) {
-        Attachment[] atts = {
-                new Attachment("image 1", 20),
-                new Attachment("image 3", 120),
-                new Attachment("image 2", 23),
+        String[] atts = {
+                new String("image 1"),
+                new String("image 3"),
+                new String("image 2"),
         };
 
-        Comparator<Attachment> cmpDescSize = (left, right) -> {
-            System.out.println("compare - " + right.getSize() + ":" + left.getSize());
-            return Integer.compare(right.getSize(), left.getSize());
+        Comparator<String> cmpDescSize = (left, right) -> {
+            System.out.println("compare - " + right.length() + ":" + left.length());
+            return Integer.compare(right.length(), left.length());
         };
         Arrays.sort(atts, cmpDescSize);
         System.out.println(Arrays.toString(atts));
