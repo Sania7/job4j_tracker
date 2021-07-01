@@ -6,8 +6,8 @@ public interface StringFunc {
     String func(String n);
 }
 
-
 class BlockLambdaDemo2 {
+
     public static void main(String[] args) {
         /**
          * Блочное выражение, изменяющее на обратный порядок следования
@@ -16,7 +16,7 @@ class BlockLambdaDemo2 {
         StringFunc reverse = (str) -> {
             String result = " ";
             int i;
-            for (i = str.length()- 1; i >= 0; i--) {
+            for (i = str.length() - 1; i >= 0; i--) {
                 result += str.toUpperCase(Locale.ROOT).charAt(i);
             }
             return result;

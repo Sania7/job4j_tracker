@@ -10,7 +10,7 @@ class BlockLambdaDemo {
          * Это блочное лямбда выражение вычисляет факториал целочисленного значения
          */
         NumericFunc factorial = (n) -> {
-            int result = 1;//объявляется переменная
+            int result = 1; //объявляется переменная
             for (int i = 1; i <= n; i++) {
                 result = i * result;
             }
