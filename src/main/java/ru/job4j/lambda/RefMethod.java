@@ -12,7 +12,8 @@ public class RefMethod {
                 "Dima"
         );
        // Consumer <String> consumer = (name) -> System.out.println(name);
-        Consumer<String> consumer = System.out::println;
-        names.forEach(consumer);
+
+        names.forEach(System.out::println);
+
     }
 }
