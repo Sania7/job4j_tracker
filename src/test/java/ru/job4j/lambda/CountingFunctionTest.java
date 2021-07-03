@@ -25,8 +25,8 @@ public class CountingFunctionTest {
 
     @Test
     public void whenExponentialFunctionThenLinearResults() {
-        List<Double> result = CountingFunction.diapason(5, 8, x -> Math.pow(x, 3) + 1);
-        List<Double> expected = Arrays.asList(126D, 217D, 344D);
+        List<Double> result = CountingFunction.diapason(5, 8, x -> Math.pow(3, x) + 1);
+        List<Double> expected = Arrays.asList(244D, 730D, 2188D);
         assertThat(result, is(expected));
     }
 }
