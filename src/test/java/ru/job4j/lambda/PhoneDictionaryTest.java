@@ -18,6 +18,7 @@ public class PhoneDictionaryTest {
         ArrayList<Person> persons = phones.find("Petr");
         assertThat(persons.get(0).getSurname(), is("Arsentev"));
     }
+
     @Test
     public void whenFidByAddress() {
         PhoneDictionary address = new PhoneDictionary();
@@ -27,11 +28,12 @@ public class PhoneDictionaryTest {
         ArrayList<Person> persons = address.find("Surgut");
         assertThat(persons.get(0).getAddress(), is("Surgut"));
     }
+
     @Test
     public void whenFindByNull() {
         PhoneDictionary thereIsNothing = new PhoneDictionary();
         thereIsNothing.add(new Person("", "", "", ""));
         ArrayList<Person> persons = thereIsNothing.find(" ");
-        assertTrue( persons.isEmpty());
+        assertTrue(persons.isEmpty());
     }
 }
