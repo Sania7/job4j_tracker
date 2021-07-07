@@ -54,7 +54,8 @@ public class ProfilesTest {
                     Arrays.asList
                             (profileOne, profileTwo, profileThree, profileThree1, profileFour, profileFive, profileFive1);
             List<Address> sort = Profiles.sort(prof);
-            List<Address> expect = Arrays.asList(addressOne, addressTwo, addressThree, addressFour, addressFive);
+            List<Address> expect =
+                    Arrays.asList(addressOne, addressTwo, addressThree, addressFour, addressFive);
 
             assertEquals(sort, expect);
         }
