@@ -1,5 +1,6 @@
 package ru.job4j.stream;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -32,31 +33,27 @@ public class ProfilesTest {
                 Arrays.asList(addressOne, addressTwo, addressThree, addressFour, addressFive);
         assertEquals(rsl, expected);
     }
+
         @Test
         public void whenSort() {
-            Address addressOne = new Address("Surgrt", "Krilova", 27, 233);
-            Address addressTwo = new Address("Tomsk", "Uchebnaja", 54, 3);
-            Address addressThree = new Address("Novosibirsk", "Frunze", 112, 122);
-            Address addressThree1 = new Address("Novosibirsk", "Frunze", 112, 122);
-            Address addressFour = new Address("Omsk", "Tverskaja", 45, 98);
-            Address addressFive = new Address("Tumen", "Burovaja", 21, 115);
-            Address addressFive1 = new Address("Tumen", "Burovaja", 21, 115);
 
-            Profile profileOne = new Profile(addressOne);
-            Profile profileTwo = new Profile(addressTwo);
-            Profile profileThree = new Profile(addressThree);
-            Profile profileThree1 = new Profile(addressThree1);
-            Profile profileFour = new Profile(addressFour);
-            Profile profileFive = new Profile(addressFive);
-            Profile profileFive1 = new Profile(addressFive1);
+            Profiles pro = new Profiles();
+            List<Profile> profiles = List.of(
+            new Profile(new Address("Surgrt", "Krilova", 27, 233)),
+            new Profile(new Address("Novosibirsk", "Frunze", 112, 122)),
+            new Profile(new Address("Novosibirsk", "Frunze", 112, 122)),
+            new Profile(new Address("Tumen", "Burovaja", 21, 115)),
+            new Profile(new Address("Tumen", "Burovaja", 21, 115))
+            );
 
-            List<Profile> prof =
-                    Arrays.asList
-                            (profileOne, profileTwo, profileThree, profileThree1, profileFour, profileFive, profileFive1);
-            List<Address> sort = Profiles.sort(prof);
-            List<Address> expect =
-                    Arrays.asList(addressOne, addressTwo, addressThree, addressFour, addressFive);
+            List<Address> expected = List.of(
+                    new Address("Surgrt", "Krilova", 27, 233),
+                    new Address("Novosibirsk", "Frunze", 112, 122),
+                    new Address("Tumen", "Burovaja", 21, 115)
+            );
 
-            assertEquals(sort, expect);
+           List<Address> rsl = pro.sort(profiles);
+
+            Assert.assertEquals(expected, rsl);
         }
 }

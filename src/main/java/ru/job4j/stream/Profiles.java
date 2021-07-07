@@ -14,12 +14,12 @@ public class Profiles {
                .collect(Collectors.toList());
    }
 
-   public static List<Address> sort(List<Profile> profile) {
-       return profile.stream()
-               .map(Profile::getAddress)
-//               .sorted(Comparator.comparing(Address::getCity))
-               .distinct()
-               .collect(Collectors.toList());
+    public List<Address> sort(List<Profile> profiles) {
+        return profiles.stream()
+                .map(Profile::getAddress)
+                .sorted(Comparator.comparing(Address::getCity))
+                .distinct()
+                .collect(Collectors.toList());
 
-   }
+    }
 }
