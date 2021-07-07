@@ -13,8 +13,10 @@ public class ProfilesTest {
         Address addressOne = new Address("Surgrt", "Krilova", 27, 233);
         Address addressTwo = new Address("Tomsk", "Uchebnaja", 54, 3);
         Address addressThree = new Address("Novosibirsk", "Frunze", 112, 122);
+        Address addressThree1 = new Address("Novosibirsk", "Frunze", 112, 122);
         Address addressFour = new Address("Omsk", "Tverskaja", 45, 98);
         Address addressFive = new Address("Tumen", "Burovaja", 21, 115);
+        Address addressFive1 = new Address("Tumen", "Burovaja", 21, 115);
 
         Profile profileOne = new Profile(addressOne);
         Profile profileTwo = new Profile(addressTwo);

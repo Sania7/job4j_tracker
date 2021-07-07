@@ -12,4 +12,13 @@ public class Profiles {
                .map(Profile::getAddress)
                .collect(Collectors.toList());
    }
+
+   public static List<Address> sort(List<Profile> profile) {
+       return profile.stream()
+               .map(Profile::getAddress)
+               .sorted()
+               .distinct()
+               .collect(Collectors.toList());
+
+   }
 }
