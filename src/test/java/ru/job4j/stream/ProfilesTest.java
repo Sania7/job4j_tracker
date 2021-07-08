@@ -47,8 +47,8 @@ public class ProfilesTest {
             );
 
             List<Address> expected = List.of(
-                    new Address("Surgrt", "Krilova", 27, 233),
                     new Address("Novosibirsk", "Frunze", 112, 122),
+                    new Address("Surgrt", "Krilova", 27, 233),
                     new Address("Tumen", "Burovaja", 21, 115)
             );
 
