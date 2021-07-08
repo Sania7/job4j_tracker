@@ -25,5 +25,4 @@ public class SchoolTest {
         );
         Assert.assertEquals(rsl, expected);
     }
-
 }
