@@ -4,18 +4,11 @@ import java.util.Objects;
 
 /**
  * Класс описывает клиента банка
+ * @author ALEXANDR
  */
-
 public class User {
     private String passport;
     private String username;
-
-
-    /**
-     * Конструктор
-     * @param passport принимает на вход паспорт клиента
-     * @param username принимает на вход имя клиента
-     */
 
     public User(String passport, String username) {
         this.passport = passport;
@@ -26,7 +19,6 @@ public class User {
      * Геттер
      * @return возвращает паспорт
      */
-
     public String getPassport() {
         return passport;
     }
@@ -35,7 +27,6 @@ public class User {
      * Сеттер
      * @param passport принимает на вход паспорт
      */
-
     public void setPassport(String passport) {
         this.passport = passport;
     }
@@ -44,7 +35,6 @@ public class User {
      * Геттер
      * @return возвращает имя клиента
      */
-
     public String getUsername() {
         return username;
     }
@@ -56,6 +46,8 @@ public class User {
     public void setUsername(String username) {
         this.username = username;
     }
+
+
 
     /**
      * Метод проверяющий уникальность клиента по паспорту

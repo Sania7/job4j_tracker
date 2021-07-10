@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StartUI {
-
     private final Output out;
 
     public StartUI(Output out) {
@@ -27,9 +26,9 @@ public class StartUI {
             }
 
             private void showMenu(List<UserAction> actions) {
-                out.println("Menu.");
-                for (int index = 0; index < actions.size(); index++) {
-                    out.println(index + ". " + actions.get(index).name());
+                out.println("Menu:");
+                for (int i = 0; i < actions.size(); i++) {
+                    System.out.println(i + ". " + actions.get(i).name());
                 }
             }
 
@@ -38,13 +37,13 @@ public class StartUI {
                 Input input = new ValidateInput(output, new ConsoleInput());
                 Tracker tracker = new Tracker();
                 List<UserAction> actions = new ArrayList<>();
-                 actions.add(new CreateAction(output));
-                 actions.add(new DeleteAction(output));
-                 actions.add(new FindAction(output));
-                 actions.add(new FindIdAction(output));
-                 actions.add(new FindNameAction(output));
-                 actions.add(new ReplaceAction(output));
-                 actions.add(new Exit(output));
+                        actions.add(new CreateAction(output));
+                        actions.add(new FindAction(output));
+                        actions.add(new ReplaceAction(output));
+                        actions.add(new DeleteAction(output));
+                        actions.add(new FindIdAction(output));
+                        actions.add(new FindNameAction(output));
+                        actions.add(new Exit(output));
 
                 new StartUI(output).init(input, tracker, actions);
             }

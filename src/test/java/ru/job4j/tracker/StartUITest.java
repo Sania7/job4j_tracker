@@ -49,11 +49,7 @@ public class StartUITest {
         actions.add(new Exit(out));
         new StartUI(out).init(in, tracker, actions);
         String ls = System.lineSeparator();
-        String menu = "Menu."
-                + ls
-                + "0. Show"
-                + ls
-                + "1. Exit"
+        String menu = "Menu:"
                 + ls;
         assertThat(out.toString(), is(item.getName()
                 + menu
@@ -82,11 +78,7 @@ public class StartUITest {
         actions.add(new Exit(out));
         new StartUI(out).init(in, tracker, actions);
         String ls = System.lineSeparator();
-        String menu = "Menu."
-                + ls
-                + "0. Find"
-                + ls
-                + "1. Exit"
+        String menu = "Menu:"
                 + ls;
         assertThat(out.toString(), is(item.getName()
                 + menu
@@ -111,11 +103,7 @@ public class StartUITest {
         actions.add(new Exit(out));
         new StartUI(out).init(in, tracker, actions);
         String ls = System.lineSeparator();
-        String menu = "Menu."
-                + ls
-                + "0. Find"
-                + ls
-                + "1. Exit"
+        String menu = "Menu:"
                 + ls;
         assertThat(out.toString(), is(item.getName()
                 + menu
@@ -149,9 +137,7 @@ public class StartUITest {
         List<UserAction> actions = new ArrayList<>();
         actions.add(new Exit(out));
         new StartUI(out).init(in, tracker, actions);
-        assertThat(out.toString(), is("Menu."
-                + System.lineSeparator()
-                + "0. Exit"
+        assertThat(out.toString(), is("Menu:"
                 + System.lineSeparator()
                 + "=== Exit ==="
                 + System.lineSeparator()));
@@ -165,11 +151,9 @@ public class StartUITest {
         List<UserAction> actions = new ArrayList<>();
         actions.add(new Exit(out));
         new StartUI(out).init(in, tracker, actions);
-        assertThat(out.toString(), is(String.format("Menu.%n"
-                + "0. Exit%n"
+        assertThat(out.toString(), is(String.format("Menu:%n"
                 + "Wrong input, you can select: 0 .. 0%n"
-                + "Menu.%n"
-                + "0. Exit%n"
+                + "Menu:%n"
                 + "=== Exit ===%n")));
     }
 }
