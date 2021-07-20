@@ -27,10 +27,11 @@ public class BankService {
 
     public User findByPassport(String passport) {
         return users.keySet()
-                .stream()
-                .filter(s -> s.getPassport().equals(passport))
-                .findFirst()
-                .orElse(null);
+                .stream()// запускаем стрим
+                .filter(s -> s.getPassport().equals(passport)) // применяем фильтр
+                .findFirst() // Метод findFirst() возвращает первый элемент по порядку из Stream,
+                // в виде обертки Optional
+                .orElse(null); // метод делает проверку объекта на null
     }
 
     public Account findByRequisite(String passport, String requisite) {
