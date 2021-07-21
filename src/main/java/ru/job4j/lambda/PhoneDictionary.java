@@ -2,6 +2,7 @@ package ru.job4j.lambda;
 
 import java.util.ArrayList;
 import java.util.function.Predicate;
+//2. Local-Variable Type Inference [#70626]
 
 public class PhoneDictionary {
 
