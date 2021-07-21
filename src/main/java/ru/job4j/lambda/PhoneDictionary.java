@@ -19,7 +19,7 @@ public class PhoneDictionary {
         Predicate<Person> combine = filterByName.or(filterBySurname)
                 .or(filterByPhone).or(filterByAddres);
         ArrayList<Person> result = new ArrayList<>();
-        for (Person person : persons) {
+        for (var person : persons) {
             if (combine.test(person)) {
                 result.add(person);
             }
