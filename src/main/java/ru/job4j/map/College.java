@@ -11,27 +11,29 @@ public class College {
         this.students = students;
     }
 
-   public Optional<Student> findByAccount(String account) {
+    public Optional<Student> findByAccount(String account) {
         Optional<Student> rsl = Optional.empty();
-       for (var student : students.keySet()) {
-           if (account.equals(student.getAccount())) {
-               rsl = Optional.of(student);
-               break;
-           }
-       }
-       return rsl;
-   }
+        for (var student : students.keySet()) {
+            if (account.equals(student.getAccount())) {
+                rsl = Optional.of(student);
+                break;
+            }
+        }
+        return rsl;
+    }
 
-   public Optional<Subject> findBySubjectName(String account, String name) {
+    public Optional<Subject> findBySubjectName(String account, String name) {
         Optional<Subject> rsl = Optional.empty();
         Optional<Student> s = findByAccount(account);
-            Set<Subject> subjects = students.get(s);
+        if (s.isPresent()) {
+            Set<Subject> subjects = students.get(s.get());
             for (var subject : subjects) {
                 if (name.equals(subject.getName())) {
                     rsl = Optional.of(subject);
                     break;
                 }
             }
+        }
         return rsl;
-   }
+    }
 }
