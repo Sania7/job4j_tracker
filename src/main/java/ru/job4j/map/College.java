@@ -10,6 +10,7 @@ public class College {
     public College(Map<Student, Set<Subject>> students) {
         this.students = students;
     }
+
    public Optional<Student> findByAccount(String account) {
         Optional<Student> rsl = Optional.empty();
        for (var student : students.keySet()) {
@@ -20,6 +21,7 @@ public class College {
        }
        return rsl;
    }
+
    public Optional<Subject> findBySubjectName(String account, String name) {
         Optional<Subject> rsl = Optional.empty();
         Optional<Student> s = findByAccount(account);

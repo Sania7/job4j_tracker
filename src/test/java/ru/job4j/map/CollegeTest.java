@@ -26,6 +26,7 @@ public class CollegeTest {
         College college = new College(students);
         assertThat(college.findByAccount("000010"), is(Optional.empty()));
     }
+
     @Test
     public void whenAccountIsOptionalNotEmpty() {
         Map<Student, Set<Subject>> students = Map.of(
