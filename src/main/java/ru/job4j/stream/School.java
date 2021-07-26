@@ -23,4 +23,19 @@ public class School {
                         e -> e,
                         (f, s) -> f));
     }
+
+    public static void main(String[] args) {
+        List<Student> studentList = List.of(
+                new Student(50, "Ivan"),
+                new Student(23, "Serg"),
+                new Student(50, "Ivan"),
+                new Student(34, "Dima"),
+                new Student(50, "Ivan")
+        );
+        School listToMap = new School();
+        Map<String, Student> rsl = listToMap.listToMap(studentList);
+        System.out.println(rsl);
+        System.out.println();
+
+    }
 }

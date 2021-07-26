@@ -37,7 +37,7 @@ public class BankService {
                     .filter(s -> s.getRequisite().equals(requisite))
                     .findFirst();
         }
-        return null;
+        return Optional.empty();
     }
 
     public boolean transferMoney(String srcPassport, String srcRequisite,

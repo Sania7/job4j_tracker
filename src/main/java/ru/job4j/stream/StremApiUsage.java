@@ -22,9 +22,11 @@ public class StremApiUsage {
         // получить минимальное и максимальное значение
         //вызвав методы min(), max(), isPresent() и get()
         Optional<Integer> minVal = myStream.min(Integer::compare);
-        if (minVal.isPresent()) {
+        if (minVal.isPresent()) { // метод isPresent проверяет присутствует ли значение в данном
+            // объекте
             System.out.println("Минимальное значение: " + minVal.get());
         }
+        // создаем новый поток данных, каждый раз когда предидущий поток уже употреблен
         // получить новый поток данных
         myStream = myList.stream();
         Optional<Integer> maxVal = myStream.max(Integer::compare);
@@ -37,11 +39,17 @@ public class StremApiUsage {
         sortedStream.forEach((n) -> System.out.print(n + " "));
         System.out.println();
         // вывести только нечетные целочисленные значения
-        Stream<Integer> oddVals = myList.stream().sorted().filter((n) -> (n % 2) == 1);
+        Stream<Integer> oddVals = myList
+                .stream()
+                .sorted()
+                .filter((n) -> (n % 2) == 1);
         System.out.print("Нечетные значения: ");
         oddVals.forEach((n) -> System.out.print(n + " "));
         System.out.println();
-         oddVals = myList.stream().sorted().filter((n) -> (n % 2) == 1)
+         oddVals = myList.
+                 stream()
+                 .sorted()
+                 .filter((n) -> (n % 2) == 1)
                  .filter((n) -> n > 5);
         System.out.print("Нечетные значения больше 5: ");
         oddVals.forEach((n) -> System.out.print(n + " "));
