@@ -79,7 +79,7 @@ public class Analyze {
                 .stream()
                 .mapToInt(Subject::getScore)
                 .sum()))
-                .max(Comparator.comparing(Tuple::hashCode))
+                .max(Comparator.comparing(Tuple::getScore))
                 .orElse(null);
     }
 
@@ -96,7 +96,7 @@ public class Analyze {
                 .entrySet()
                 .stream()
                 .map(t -> new Tuple(t.getKey(), t.getValue()))
-                .max(Comparator.comparing(Tuple::hashCode))
+                .max(Comparator.comparing(Tuple::getScore))
                 .orElse(null);
 
     }
